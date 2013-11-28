@@ -41,3 +41,11 @@
 1385610385859	Encapsulate field 'price_level'
 1385610427892	Encapsulate field 'vicinity'
 1385610449779	Encapsulate field 'events'
+1385611545178	Rename type 'TextSearch'
+1385611558813	Delete element
+1385611680369	Rename type 'TextSearchResult'
+1385611696501	Rename type 'TextSearchResultSet'
+1385611704892	Delete element
+1385611708933	Delete element
+1385611756750	Rename type 'ParseTextSearch'
+1385611761655	Delete element

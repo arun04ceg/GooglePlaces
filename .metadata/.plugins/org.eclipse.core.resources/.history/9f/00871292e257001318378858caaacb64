@@ -2,7 +2,9 @@ package Main;
 
 import java.util.HashMap;
 
-import DataBinders.SearchResultSet;
+import DataBinders.NearbySearchResultSet;
+import DataBinders.TextSearchResultSet;
+import Query.NearbySearch;
 import Query.Search;
 
 public class Main {
@@ -15,23 +17,15 @@ public class Main {
 		params.put("sensor", "false");
 		params.put("key", "AIzaSyC8j9ERqf-XwxMpATEfO063jkfhvTINNcw");
 		params.put("types", "hospital|health");
-		SearchResultSet result = search.search("nearbysearch", params);
+		NearbySearchResultSet result = search.search("nearbysearch", params);
 		System.out.println(result.getResults().get(0).getTypes());
 		
+		Search textSearch = new Search();
 		params = new HashMap<String, String>();
 		params.put("query", "restaurants in Sydney");
 		params.put("sensor", "true");
 		params.put("key", "AIzaSyC8j9ERqf-XwxMpATEfO063jkfhvTINNcw");
-		result = search.search("textsearch", params);
-		System.out.println(result.getResults().get(0).getName());
-		
-		params = new HashMap<String, String>();
-		params.put("location", "51.503186,-0.126446");
-		params.put("radius", "5000");
-		params.put("types", "museum");
-		params.put("sensor", "false");
-		params.put("key", "AIzaSyC8j9ERqf-XwxMpATEfO063jkfhvTINNcw");
-		result = search.search("radarsearch", params);
-		System.out.println(result.getResults().get(0).getId());
+		TextSearchResultSet result1 = search.search("textsearch", params);
+		System.out.println(result1.getStatus());
 	}
 }

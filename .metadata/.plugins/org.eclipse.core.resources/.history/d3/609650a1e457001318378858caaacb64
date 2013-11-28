@@ -25,6 +25,7 @@ public class Main {
 		result = search.search("textsearch", params);
 		System.out.println(result.getResults().get(0).getName());
 		
+		//location=51.503186,-0.126446&radius=5000&types=museum&sensor=false&key=AIzaSyC8j9ERqf-XwxMpATEfO063jkfhvTINNcw
 		params = new HashMap<String, String>();
 		params.put("location", "51.503186,-0.126446");
 		params.put("radius", "5000");
@@ -32,6 +33,6 @@ public class Main {
 		params.put("sensor", "false");
 		params.put("key", "AIzaSyC8j9ERqf-XwxMpATEfO063jkfhvTINNcw");
 		result = search.search("radarsearch", params);
-		System.out.println(result.getResults().get(0).getId());
+		System.out.println(result.getResults().get(0).getTypes());
 	}
 }

@@ -18,8 +18,6 @@ public class Http {
 	static {
 		ServiceMap.put("nearbysearch", "https://maps.googleapis.com/maps/api/place/nearbysearch/");
 		ServiceMap.put("textsearch", "https://maps.googleapis.com/maps/api/place/textsearch/");
-		ServiceMap.put("radarsearch", "https://maps.googleapis.com/maps/api/place/radarsearch/");
-		ServiceMap.put("placedetails", "https://maps.googleapis.com/maps/api/place/details/");
 	}
 	
 	public String getData(String category, Map<String, String> params) throws IOException
