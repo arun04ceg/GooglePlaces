@@ -1,0 +1,17 @@
+package Query;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import DataBinders.NearbySearchResult;
+import Http.Http;
+
+public class NearbySearch {
+
+	public NearbySearchResult search() {
+		Http http = new Http();
+		Map<String, String> params = new HashMap<String, String>();
+		http.getData("search", params);
+		return null;
+	}
+}

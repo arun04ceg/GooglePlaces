@@ -1,0 +1,34 @@
+package Query;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import DataBinders.NearbySearchResult;
+import Http.Http;
+import JSONParsers.ParseNearbySearch;
+
+public class NearbySearch {
+
+	public List<NearbySearchResult> search(HashMap<String, String> params) throws Exception {
+		Http http = new Http();
+		String data = http.getData("search", params);
+		
+		/*
+		 * Check Validity of required parameters
+		 */
+		List<String> requiredParams = new ArrayList<String>(Arrays.asList("key", "location", "sensor"));
+		
+		for(String param : requiredParams) {
+			if (!params.containsKey(param)) {
+				throw new Exception("Missing Required param: " + param);
+			}
+		}
+		
+		List<NearbySearchResult> result = ParseNearbySearch.parse(data);
+		return result;
+	}
+}

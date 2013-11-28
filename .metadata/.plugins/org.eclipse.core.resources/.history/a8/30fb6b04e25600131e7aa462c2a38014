@@ -1,0 +1,13 @@
+package Query;
+
+import java.net.HttpURLConnection;
+
+import DataBinders.NearbySearchResult;
+
+public class NearbySearch {
+
+	public NearbySearchResult search() {
+		Http http;
+		return null;
+	}
+}

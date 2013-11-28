@@ -1,0 +1,47 @@
+package DataBinders;
+
+import java.util.List;
+
+public class SearchResult {
+
+	private location location;
+	private String icon;
+	private String id;
+	private String name;
+	private String reference;
+	private List<String> types;
+	private String vicinity;
+	
+	public location getLocation() {
+		return location;
+	}
+	
+	public void setLocation(location loc) {
+		location = loc;
+	}
+	
+	public String getIcon() {
+		return icon;
+	}
+	
+	public void setIcon(String ic) {
+		icon = ic;
+	}
+	
+	public String getId() {
+		return id;
+	}
+	
+	public void setId(String i) {
+		id = i;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public void setName(String n) {
+		name = n;
+	}
+	
+}

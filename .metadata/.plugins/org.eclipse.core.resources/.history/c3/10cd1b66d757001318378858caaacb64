@@ -1,0 +1,15 @@
+package Main;
+
+import java.util.HashMap;
+
+import Query.NearbySearch;
+
+public class Main {
+
+	public static void main(String[] args) {
+		NearbySearch nearbySearch = new NearbySearch();
+		HashMap<String, String> params = new HashMap<String, String>();
+		
+		nearbySearch.search(params);
+	}
+}

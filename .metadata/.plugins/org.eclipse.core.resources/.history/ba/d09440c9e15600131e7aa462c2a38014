@@ -1,0 +1,10 @@
+package Query;
+
+import DataBinders.NearbySearchResult;
+
+public class NearbySearch {
+
+	public NearbySearchResult search() {
+		return null;
+	}
+}
