@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -15,7 +16,8 @@ public class Http {
 	private final static String format = "json";
 	private final static Map<String, String> ServiceMap = new HashMap<String, String>();
 	static {
-		ServiceMap.put("search", "https://maps.googleapis.com/maps/api/place/search/");
+		ServiceMap.put("nearbysearch", "https://maps.googleapis.com/maps/api/place/nearbysearch/");
+		ServiceMap.put("textsearch", "https://maps.googleapis.com/maps/api/place/textsearch/");
 	}
 	
 	public String getData(String category, Map<String, String> params) throws IOException
@@ -43,15 +45,16 @@ public class Http {
 		return response.toString();
 	}
 	
+	@SuppressWarnings("deprecation")
 	private String constructUrlFromMap(Map<String, String> params)
 	{
 		StringBuffer builder = new StringBuffer();
 		for(Map.Entry<String, String> param : params.entrySet())
 		{
 			builder.append("&");
-			builder.append(param.getKey());
+			builder.append(URLEncoder.encode(param.getKey()));
 			builder.append("=");
-			builder.append(param.getValue());
+			builder.append(URLEncoder.encode(param.getValue()));
 		}
 		return builder.toString();
 	}

@@ -5,15 +5,15 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-import DataBinders.TopNearbySearchResult;
+import DataBinders.NearbySearchResultSet;
 import Http.Http;
 import JSONParsers.ParseNearbySearch;
 
 public class NearbySearch {
 
-	public TopNearbySearchResult search(HashMap<String, String> params) throws Exception {
+	public NearbySearchResultSet search(HashMap<String, String> params) throws Exception {
 		Http http = new Http();
-		String data = http.getData("search", params);
+		String data = http.getData("nearbysearch", params);
 		
 		/*
 		 * Check Validity of required parameters
@@ -26,7 +26,7 @@ public class NearbySearch {
 			}
 		}
 		
-		TopNearbySearchResult result = ParseNearbySearch.parse(data);
+		NearbySearchResultSet result = ParseNearbySearch.parse(data);
 		return result;
 	}
 }
