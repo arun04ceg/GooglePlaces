@@ -1,0 +1,5 @@
+package DataBinders;
+
+public class PlaceAutoCompleteResultSet {
+
+}

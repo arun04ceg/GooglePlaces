@@ -11,7 +11,7 @@ import JSONParsers.ParseSearch;
 
 public class Search {
 
-	public SearchResultSet search(String SearchType, HashMap<String, String> params) throws Exception {
+	public static SearchResultSet search(String SearchType, HashMap<String, String> params) throws Exception {
 		Http http = new Http();
 		String data = http.getData(SearchType, params);
 		

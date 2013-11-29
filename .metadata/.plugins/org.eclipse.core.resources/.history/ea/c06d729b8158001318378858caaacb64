@@ -1,0 +1,9 @@
+package DataBinders;
+
+public class Prediction {
+
+	private String description;
+	private String reference;
+	private String id;
+	
+}

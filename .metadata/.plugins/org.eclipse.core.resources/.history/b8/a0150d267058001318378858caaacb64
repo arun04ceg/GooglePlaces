@@ -1,0 +1,7 @@
+package DataBinders;
+
+public class Period {
+	private DayTime open;
+	private DayTime close;
+
+}

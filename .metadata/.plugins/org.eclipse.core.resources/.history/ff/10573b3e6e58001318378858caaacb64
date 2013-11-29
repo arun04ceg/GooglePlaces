@@ -1,0 +1,12 @@
+package DataBinders;
+
+import java.util.List;
+
+public class DetailsResultSet {
+
+	private List<String> html_attributions;
+	private DetailsResult result;
+	private String status;
+
+}
+

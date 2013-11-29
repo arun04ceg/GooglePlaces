@@ -1,0 +1,9 @@
+package DataBinders;
+
+import java.util.List;
+
+public class PlaceAutoCompleteResultSet {
+
+	private String status;
+	private List<Prediction> predictions;
+}

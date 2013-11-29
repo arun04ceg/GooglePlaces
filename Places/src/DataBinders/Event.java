@@ -3,6 +3,7 @@ package DataBinders;
 public class Event {
 
 	private String event_id;
+	private String start_time;
 	private String summary;
 	private String url;
 	/**
@@ -40,6 +41,18 @@ public class Event {
 	 */
 	public void setUrl(String url) {
 		this.url = url;
+	}
+	/**
+	 * @return the start_time
+	 */
+	public String getStart_time() {
+		return start_time;
+	}
+	/**
+	 * @param start_time the start_time to set
+	 */
+	public void setStart_time(String start_time) {
+		this.start_time = start_time;
 	}
 	
 }

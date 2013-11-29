@@ -1,0 +1,50 @@
+package Main;
+
+import java.util.HashMap;
+
+import DataBinders.DetailsResultSet;
+import DataBinders.Photo;
+import DataBinders.SearchResultSet;
+import Query.Details;
+import Query.PlacePhoto;
+import Query.Search;
+
+public class Main {
+
+	public static void main(String[] args) throws Exception {
+		HashMap<String, String> params = new HashMap<String, String>();
+		params.put("location", "40.7500,111.8833");
+		params.put("radius", "100000");
+		params.put("sensor", "false");
+		params.put("key", "AIzaSyC8j9ERqf-XwxMpATEfO063jkfhvTINNcw");
+		params.put("types", "hospital|health");
+		SearchResultSet result = Search.search("nearbysearch", params);
+		System.out.println(result.getResults().get(0).getTypes());
+		
+		params = new HashMap<String, String>();
+		params.put("query", "restaurants in Sydney");
+		params.put("sensor", "true");
+		params.put("key", "AIzaSyC8j9ERqf-XwxMpATEfO063jkfhvTINNcw");
+		result = Search.search("textsearch", params);
+		System.out.println(result.getResults().get(0).getName());
+		
+		params = new HashMap<String, String>();
+		params.put("location", "51.503186,-0.126446");
+		params.put("radius", "5000");
+		params.put("types", "museum");
+		params.put("sensor", "false");
+		params.put("key", "AIzaSyC8j9ERqf-XwxMpATEfO063jkfhvTINNcw");
+		result = Search.search("radarsearch", params);
+		System.out.println(result.getResults().get(0).getId());
+		
+		params = new HashMap<String, String>();
+		params.put("reference", "CmRYAAAAciqGsTRX1mXRvuXSH2ErwW-jCINE1aLiwP64MCWDN5vkXvXoQGPKldMfmdGyqWSpm7BEYCgDm-iv7Kc2PF7QA7brMAwBbAcqMr5i1f4PwTpaovIZjysCEZTry8Ez30wpEhCNCXpynextCld2EBsDkRKsGhSLayuRyFsex6JA6NPh9dyupoTH3g");
+		params.put("sensor", "true");
+		params.put("key", "AIzaSyC8j9ERqf-XwxMpATEfO063jkfhvTINNcw");
+		DetailsResultSet result1= Details.details(params);
+		System.out.println(result1.getResult().getInternational_phone_number());
+		
+		String url = PlacePhoto.getPhotoUrl("AIzaSyC8j9ERqf-XwxMpATEfO063jkfhvTINNcw", "CoQBfAAAAPSHHM0ZFQKPBt-UuzNbIdawd0oIK68x43eQJsB4zOvE1bZXQK4kDceY4SMkNNz0qNb_xD-jOYOA-ZOZVJ9gO8xVZ0tfsepEB028ClnebfiA7YrSrcU-CqBac7MbcXwN6sMRdu20qe_xSkar6uFrnaJIMmFb3zsD1ohJNzN0HO-gEhCK1gB-OLfRJ98PXEBc8lv-GhTcgk450DvAfsun9G6JkHBqU8UgyQ", "true", "maxwidth", "400");
+		System.out.println(url);
+	}
+}

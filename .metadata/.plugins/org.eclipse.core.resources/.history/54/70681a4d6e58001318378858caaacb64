@@ -1,0 +1,11 @@
+package DataBinders;
+
+import java.util.List;
+
+public class AddressComponent {
+
+	String long_name;
+	String short_name;
+	List<String> types;
+		
+}

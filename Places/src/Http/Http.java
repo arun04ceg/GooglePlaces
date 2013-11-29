@@ -20,6 +20,8 @@ public class Http {
 		ServiceMap.put("textsearch", "https://maps.googleapis.com/maps/api/place/textsearch/");
 		ServiceMap.put("radarsearch", "https://maps.googleapis.com/maps/api/place/radarsearch/");
 		ServiceMap.put("placedetails", "https://maps.googleapis.com/maps/api/place/details/");
+		ServiceMap.put("placeautocomplete", "https://maps.googleapis.com/maps/api/place/autocomplete/");
+		ServiceMap.put("queryautocomplete", "https://maps.googleapis.com/maps/api/place/queryautocomplete/");
 	}
 	
 	public String getData(String category, Map<String, String> params) throws IOException
