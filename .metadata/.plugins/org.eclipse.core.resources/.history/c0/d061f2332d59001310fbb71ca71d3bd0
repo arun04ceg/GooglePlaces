@@ -1,0 +1,16 @@
+package LocationAutoCompleteTextView;
+
+import android.content.Context;
+import android.util.AttributeSet;
+import android.view.View;
+import android.widget.AutoCompleteTextView;
+
+public class LocationAutoCompleteTextView extends AutoCompleteTextView{
+	public LocationAutoCompleteTextView(Context context, AttributeSet attrs) {
+		super(context, attrs);
+	}
+	
+	public void clickedSetLocation(View view) {
+		
+	}
+}

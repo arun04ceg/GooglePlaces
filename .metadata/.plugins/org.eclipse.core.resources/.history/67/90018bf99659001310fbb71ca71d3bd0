@@ -1,0 +1,12 @@
+
+public class Main {
+	public static void main(String[] args) {
+		CharSequence a = "Arun";
+		modifyString(a.toString());
+		System.out.println(a);
+	}
+	
+	public static void modifyString(CharSequence a) {
+		a = "Praveen";
+	}
+}

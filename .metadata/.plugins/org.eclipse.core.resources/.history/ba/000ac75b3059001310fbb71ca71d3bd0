@@ -1,0 +1,64 @@
+package com.example.healthcaresearch;
+
+import java.sql.ResultSet;
+import java.util.HashMap;
+
+import DataBinders.PlaceAutoCompleteResultSet;
+import LocationAutoCompleteTextView.LocationAutoCompleteTextView;
+import Query.PlaceAutoComplete;
+import android.os.Bundle;
+import android.app.Activity;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.Menu;
+
+public class LocationAutoComplete extends Activity {
+	LocationAutoCompleteTextView textView;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_location_auto_complete);
+		
+		textView = (LocationAutoCompleteTextView) findViewById(R.id.locationAuto);
+		textView.addTextChangedListener(new TextWatcher() {
+			
+			@Override
+			public void onTextChanged(CharSequence s, int start, int before, int count) {
+				HashMap<String, String> params = new HashMap<String, String>();
+				params.put("sensor", "true");
+				params.put("key", "AIzaSyC8j9ERqf-XwxMpATEfO063jkfhvTINNcw");
+				params.put("input", s.toString());
+				PlaceAutoCompleteResultSet results;
+				try {
+					results = PlaceAutoComplete.autoComplete(params);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				ResultSet
+			}
+			
+			@Override
+			public void beforeTextChanged(CharSequence s, int start, int count,
+					int after) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void afterTextChanged(Editable s) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.location_auto_complete, menu);
+		return true;
+	}
+
+}
