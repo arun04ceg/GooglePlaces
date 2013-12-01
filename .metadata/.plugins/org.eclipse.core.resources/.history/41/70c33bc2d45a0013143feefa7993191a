@@ -1,0 +1,13 @@
+package DataBinders;
+
+import java.util.List;
+
+
+public class GeoCodeResult {
+	private List<AddressComponent> address_components ;
+	private String formatted_address;
+	private geometry geometry;
+	
+	
+
+}

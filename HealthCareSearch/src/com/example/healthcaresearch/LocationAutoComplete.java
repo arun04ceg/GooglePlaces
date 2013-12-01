@@ -5,26 +5,53 @@ import java.util.HashMap;
 import java.util.List;
 
 import DataBinders.PlaceAutoCompleteResultSet;
-import LocationAutoCompleteTextView.LocationAutoCompleteTextView;
 import Query.PlaceAutoComplete;
+import android.app.Activity;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.app.Activity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Menu;
-import android.widget.SimpleAdapter;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
+import android.widget.Toast;
 
 public class LocationAutoComplete extends Activity {
-	LocationAutoCompleteTextView textView;
+	AutoCompleteTextView textView;
+	ArrayAdapter<String> adapter;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		System.out.println("Hello");
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_location_auto_complete);
 		
-		textView = (LocationAutoCompleteTextView) findViewById(R.id.locationAuto);
+		adapter= new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, new ArrayList<String>());	
+		
+		textView = (AutoCompleteTextView) findViewById(R.id.locationAuto);
+		textView.setThreshold(1);
+		textView.setAdapter(adapter);
+		
+		textView.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				String selectedItem = textView.getText().toString();
+				Toast.makeText(getApplicationContext(), "Selected " + '"' + selectedItem + '"', Toast.LENGTH_LONG).show();
+				
+				Intent resultIntent = new Intent();
+				// TODO Add extras or a data URI to this intent as appropriate.
+				resultIntent.putExtra("SelectedLocation", selectedItem);
+				setResult(Activity.RESULT_OK, resultIntent);
+				finish();
+			}
+	
+		});
+		
 		textView.addTextChangedListener(new TextWatcher() {
 			
 			@Override
@@ -44,10 +71,10 @@ public class LocationAutoComplete extends Activity {
 		});
 	}
 
-	private class LocationTask extends AsyncTask<String, Void, List<HashMap<String, String>>> {
+	private class LocationTask extends AsyncTask<String, Void, List<String>> {
 
 		@Override
-		protected List<HashMap<String, String>> doInBackground(String... s) {
+		protected List<String> doInBackground(String... s) {
 			HashMap<String, String> params = new HashMap<String, String>();
 			params.put("sensor", "true");
 			params.put("key", "AIzaSyC8j9ERqf-XwxMpATEfO063jkfhvTINNcw");
@@ -61,19 +88,17 @@ public class LocationAutoComplete extends Activity {
 				e.printStackTrace();
 			}
 					
-			List<HashMap<String, String>> finalResults = new ArrayList<HashMap<String, String>>();
+			List<String> finalResults = new ArrayList<String>();
 			for(DataBinders.Prediction prediction : results.getPredictions()) {
-				HashMap<String, String> finalResult = new HashMap<String, String>();
-				finalResult.put("description", prediction.getDescription());
-				finalResults.add(finalResult);
-			}	
+				finalResults.add(prediction.getDescription());
+			}
+
 			return finalResults;
 		}
 		
-		protected void onPostExecute(List<HashMap<String, String>> finalResults) {
-			System.out.println(finalResults);
-			SimpleAdapter adapter = new SimpleAdapter(getBaseContext(), finalResults, R.layout.activity_location_auto_complete, new String[] {"description"}, new int[] {R.id.locationAuto});
-			textView.setAdapter(adapter);
+		protected void onPostExecute(List<String> finalResults) {
+			adapter.clear();
+			adapter.addAll(finalResults);
 	    }
 		
 	}
@@ -83,5 +108,4 @@ public class LocationAutoComplete extends Activity {
 		getMenuInflater().inflate(R.menu.location_auto_complete, menu);
 		return true;
 	}
-
 }

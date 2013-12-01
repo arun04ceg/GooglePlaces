@@ -19,17 +19,6 @@
         android:text="@string/set_location" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button1"
-        android:layout_alignRight="@+id/button1"
-        android:layout_below="@+id/button1"
-        android:layout_marginTop="56dp"
-        android:onClick="clickedNearbySearch"
-        android:text="@string/nearby_search" />
-
-    <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -38,5 +27,29 @@
         android:layout_marginTop="66dp"
         android:text="@string/text_search"
         android:onClick="clickedTextSearch" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="62dp"
+        android:onClick="clickedNearbySearch"
+        android:text="@string/nearby_search" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="28dp"
+        android:ems="10"
+        android:hint="@string/selected_location"
+        android:inputType="text" >
+
+        <requestFocus />
+    </EditText>
 
 </RelativeLayout>

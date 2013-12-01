@@ -1,0 +1,5 @@
+package LocationAutoCompleteTextView;
+
+public class LocationAutoCompleteListener extends Activity implements OnItemClickListener {
+
+}

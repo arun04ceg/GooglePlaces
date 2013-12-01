@@ -3,10 +3,12 @@ package Main;
 import java.util.HashMap;
 
 import DataBinders.DetailsResultSet;
+import DataBinders.GeoCodeResultSet;
 import DataBinders.PlaceAutoCompleteResultSet;
 import DataBinders.QueryAutocompleteResultSet;
 import DataBinders.SearchResultSet;
 import Query.Details;
+import Query.GeoCode;
 import Query.PlaceAutoComplete;
 import Query.PlacePhoto;
 import Query.QueryAutoComplete;
@@ -63,6 +65,14 @@ public class Main {
 		params.put("input", "pizza near par");
 		QueryAutocompleteResultSet result3 = QueryAutoComplete.autoComplete(params);
 		System.out.println(result3.getPredictions().get(0).getDescription());
+		
+		params = new HashMap<String, String>();
+		params.put("sensor", "true");
+		params.put("address", "Salt Lake City, UT");
+		GeoCodeResultSet result4 = GeoCode.getLatLong(params);
+		System.out.println(result4.getResults().get(0).getGeometry().getLocation().getLat());
+		System.out.println(result4.getResults().get(0).getGeometry().getLocation().getLng());
+		
 		
 	}
 }
