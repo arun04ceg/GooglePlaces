@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="8"
+        android:minSdkVersion="11"
         android:targetSdkVersion="18" />
     
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -27,6 +27,14 @@
         <activity
             android:name="com.example.healthcaresearch.LocationAutoComplete"
             android:label="@string/title_activity_location_auto_complete" >
+        </activity>
+        <activity 
+            android:name="com.example.healthcaresearch.NearbySearch"    
+            android:label="@string/nearby_search" >
+        </activity>
+        <activity 
+            android:name="com.example.healthcaresearch.TextSearch"    
+            android:label="@string/text_search" >
         </activity>
     </application>
 

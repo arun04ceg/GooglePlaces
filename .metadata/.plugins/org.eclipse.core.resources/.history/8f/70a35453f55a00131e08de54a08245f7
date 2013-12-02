@@ -1,0 +1,14 @@
+package com.example.healthcaresearch;
+
+import android.content.Context;
+import android.widget.ArrayAdapter;
+
+public class ModifiedArrayAdapter extends ArrayAdapter<String>{
+	
+	public ModifiedArrayAdapter(Context context, String[] values) {
+	    super(context, R.layout.result_in_list, values);
+	    this.context = context;
+	    this.values = values;
+	  }
+
+}

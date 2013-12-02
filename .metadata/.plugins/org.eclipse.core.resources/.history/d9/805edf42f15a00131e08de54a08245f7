@@ -1,0 +1,79 @@
+package com.example.healthcaresearch;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+import DataBinders.SearchResult;
+import DataBinders.SearchResultSet;
+import Query.Search;
+import android.app.Activity;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.ListView;
+
+public class NearbySearch extends Activity {
+	
+	private String selectedLocation;
+	private String lat;
+	private String lng;
+	private ArrayAdapter<String> adapter;
+	ListView listView;
+	EditText editText;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_nearby_search);
+		
+		selectedLocation = getIntent().getExtras().getString("selectedLocation");
+		lat = Double.toString(getIntent().getExtras().getDouble("lat"));
+		lng = Double.toString(getIntent().getExtras().getDouble("lng"));
+		
+		editText = (EditText) findViewById(R.id.editText1);
+		editText.setText(selectedLocation);
+		
+		listView = (ListView) findViewById(R.id.listView1);
+		
+		NearbySearchTask task = new NearbySearchTask();
+		task.execute(selectedLocation);
+	}
+	
+	private class NearbySearchTask extends AsyncTask<String, Void, List<String>> {
+
+		@Override
+		protected List<String> doInBackground(String... param) {
+			HashMap<String, String> params = new HashMap<String, String>();
+			params.put("location", lat + "," + lng);
+			params.put("radius", "100000");
+			params.put("sensor", "true");
+			params.put("key", "AIzaSyC8j9ERqf-XwxMpATEfO063jkfhvTINNcw");
+			params.put("types", "hospital|health");
+						
+			SearchResultSet results = new SearchResultSet();
+			try {
+				results = Search.search("nearbysearch", params);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+					
+			List<String> finalResults = new ArrayList<String>();
+			for(SearchResult result : results.getResults()) {
+				finalResults.add(result.getFormatted_address());
+			}
+			
+			return finalResults;
+		}
+		
+		@Override
+		protected void onPostExecute(List<String> finalResults) {
+			adapter = new ArrayAdapter<String>(getApplicationContext(), 
+					android.R.layout.simple_list_item_1, finalResults);
+			listView.setAdapter(adapter);
+	    }
+	}
+
+}

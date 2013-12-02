@@ -1,0 +1,8 @@
+package com.example.healthcaresearch;
+
+import android.widget.ArrayAdapter;
+
+public class ModifiedArrayAdapter extends ArrayAdapter<String>{
+	
+
+}

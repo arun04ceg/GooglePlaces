@@ -29,7 +29,7 @@ public class LocationAutoComplete extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_location_auto_complete);
 		
-		adapter= new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, new ArrayList<String>());	
+		adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, new ArrayList<String>());	
 		
 		textView = (AutoCompleteTextView) findViewById(R.id.locationAuto);
 		textView.setThreshold(1);
@@ -45,7 +45,7 @@ public class LocationAutoComplete extends Activity {
 				
 				Intent resultIntent = new Intent();
 				// TODO Add extras or a data URI to this intent as appropriate.
-				resultIntent.putExtra("SelectedLocation", selectedItem);
+				resultIntent.putExtra("selectedLocation", selectedItem);
 				setResult(Activity.RESULT_OK, resultIntent);
 				finish();
 			}
@@ -77,8 +77,8 @@ public class LocationAutoComplete extends Activity {
 		protected List<String> doInBackground(String... s) {
 			HashMap<String, String> params = new HashMap<String, String>();
 			params.put("sensor", "true");
-			params.put("key", "AIzaSyC8j9ERqf-XwxMpATEfO063jkfhvTINNcw");
-			params.put("input", s[0].toString());
+            params.put("key", "AIzaSyC8j9ERqf-XwxMpATEfO063jkfhvTINNcw");
+            params.put("input", s[0].toString());
 						
 			PlaceAutoCompleteResultSet results = new PlaceAutoCompleteResultSet();
 			try {

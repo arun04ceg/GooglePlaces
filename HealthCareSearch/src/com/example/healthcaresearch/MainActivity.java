@@ -40,11 +40,27 @@ public class MainActivity extends Activity {
 		startActivityForResult(i, requestCode);
 	}
 	
+	public void clickedNearbySearch(View view) {
+		Intent i = new Intent(this, NearbySearch.class);
+		i.putExtra("selectedLocation", selectedLocation);
+		i.putExtra("lat", lat);
+		i.putExtra("lng", lng);
+		startActivity(i);
+	}
+	
+	public void clickedTextSearch(View view) {
+		Intent i = new Intent(this, TextSearch.class);
+		i.putExtra("selectedLocation", selectedLocation);
+		i.putExtra("lat", lat);
+		i.putExtra("lng", lng);
+		startActivity(i);
+	}
+	
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		TextView t;
 		t = (TextView)findViewById(R.id.editText1);
-		selectedLocation = data.getStringExtra("SelectedLocation");
+		selectedLocation = data.getStringExtra("selectedLocation");
 		t.setText(selectedLocation);
 		t.setEnabled(false);
 		
