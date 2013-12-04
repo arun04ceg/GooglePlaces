@@ -1,6 +1,0 @@
-
-public class Http {
-	private
-		String PlaceSearch = "https://maps.googleapis.com/maps/api/place/search/json";
-
-}
