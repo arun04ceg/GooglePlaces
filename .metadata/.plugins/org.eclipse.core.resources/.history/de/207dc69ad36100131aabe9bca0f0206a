@@ -85,11 +85,6 @@ public class MainActivity extends Activity {
 		task.execute(selectedLocation);
 	}
 	
-	/**
-	 * AsyncTask to fetch LatLong given a location
-	 * @author arun
-	 *
-	 */
 	private class GeoCodeTask extends AsyncTask<String, Void, Void> {
 
 		@Override

@@ -49,10 +49,6 @@ public class MainActivity extends Activity {
 		startActivityForResult(i, requestCode);
 	}
 	
-	/**
-	 * clickedNearbySearch
-	 * @param view
-	 */
 	public void clickedNearbySearch(View view) {
 		Intent i = new Intent(this, NearbySearch.class);
 		i.putExtra("selectedLocation", selectedLocation);
@@ -61,10 +57,6 @@ public class MainActivity extends Activity {
 		startActivity(i);
 	}
 	
-	/**
-	 * clickedTextSearch
-	 * @param view
-	 */
 	public void clickedTextSearch(View view) {
 		Intent i = new Intent(this, TextSearch.class);
 		i.putExtra("selectedLocation", selectedLocation);
@@ -85,11 +77,6 @@ public class MainActivity extends Activity {
 		task.execute(selectedLocation);
 	}
 	
-	/**
-	 * AsyncTask to fetch LatLong given a location
-	 * @author arun
-	 *
-	 */
 	private class GeoCodeTask extends AsyncTask<String, Void, Void> {
 
 		@Override

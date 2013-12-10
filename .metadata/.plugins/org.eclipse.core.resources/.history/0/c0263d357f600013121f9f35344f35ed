@@ -9,7 +9,7 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
- * Parser for QueryAutocomplete response
+ * Parser for query Autocomplete respose
  * @author arun
  *
  */

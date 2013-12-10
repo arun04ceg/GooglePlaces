@@ -81,11 +81,6 @@ public class LocationAutoComplete extends Activity {
 		});
 	}
 
-	/**
-	 * AsyncTask to fetch data
-	 * @author arun
-	 *
-	 */
 	private class LocationTask extends AsyncTask<String, Void, List<String>> {
 
 		@Override

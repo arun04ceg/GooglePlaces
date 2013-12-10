@@ -39,9 +39,7 @@ public class LocationAutoComplete extends Activity {
 		textView = (AutoCompleteTextView) findViewById(R.id.locationAuto);
 		textView.setThreshold(1);
 		textView.setAdapter(adapter);
-		/**
-		 * OnItemClickListener
-		 */
+		
 		textView.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
@@ -59,9 +57,6 @@ public class LocationAutoComplete extends Activity {
 	
 		});
 		
-		/**
-		 * TextChangedListener
-		 */
 		textView.addTextChangedListener(new TextWatcher() {
 			
 			@Override
@@ -81,11 +76,6 @@ public class LocationAutoComplete extends Activity {
 		});
 	}
 
-	/**
-	 * AsyncTask to fetch data
-	 * @author arun
-	 *
-	 */
 	private class LocationTask extends AsyncTask<String, Void, List<String>> {
 
 		@Override

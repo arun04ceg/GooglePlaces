@@ -39,14 +39,14 @@
 		<item value="639" key="DIALOG_HEIGHT"/>
 		<item value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
 	</section>
-	<section name="RenameInformationPopup">
-	</section>
 	<section name="NewClassWizardPage">
 		<item value="false" key="create_constructor"/>
 		<item value="true" key="create_unimplemented"/>
 		<item value="false" key="create_main"/>
 	</section>
 	<section name="org.eclipse.ltk.ui.refactoring.settings">
+	</section>
+	<section name="RenameInformationPopup">
 	</section>
 	<section name="AddGetterSetterDialog">
 		<item value="false" key="RemoveFinal"/>

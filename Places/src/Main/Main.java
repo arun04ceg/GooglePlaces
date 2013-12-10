@@ -14,6 +14,11 @@ import Query.PlacePhoto;
 import Query.QueryAutoComplete;
 import Query.Search;
 
+/**
+ * Sample main code for testing
+ * @author arun
+ *
+ */
 public class Main {
 
 	public static void main(String[] args) throws Exception {

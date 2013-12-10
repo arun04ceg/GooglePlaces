@@ -61,11 +61,6 @@ public class Http {
 		return response.toString();
 	}
 	
-	/**
-	 * This function constructs the final url if the params are sent
-	 * @param params
-	 * @return
-	 */
 	@SuppressWarnings("deprecation")
 	private String constructUrlFromMap(Map<String, String> params)
 	{

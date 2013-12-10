@@ -1,7 +1,0 @@
-package DataBinders;
-
-public class DayTime {
-
-	private String day;
-	private String time;
-}

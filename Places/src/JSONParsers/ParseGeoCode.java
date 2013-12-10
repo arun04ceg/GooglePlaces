@@ -9,6 +9,11 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/**
+ * Parser for GeoCode respose
+ * @author arun
+ *
+ */
 public class ParseGeoCode {
 
 	public static GeoCodeResultSet parse(String data) throws JsonParseException, JsonMappingException, IOException {

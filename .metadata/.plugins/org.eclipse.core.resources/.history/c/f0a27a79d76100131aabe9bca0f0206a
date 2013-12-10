@@ -53,9 +53,6 @@ public class NearbySearch extends Activity {
 		adapter = new ModifiedArrayAdapter(this, results);
 		listView.setAdapter(adapter);
 		
-		/**
-		 * OnItemClickListener
-		 */
 		listView.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override

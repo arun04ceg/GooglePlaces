@@ -53,9 +53,6 @@ public class NearbySearch extends Activity {
 		adapter = new ModifiedArrayAdapter(this, results);
 		listView.setAdapter(adapter);
 		
-		/**
-		 * OnItemClickListener
-		 */
 		listView.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
@@ -78,11 +75,6 @@ public class NearbySearch extends Activity {
 		task.execute(selectedLocation);
 	}
 	
-	/**
-	 * AsyncTask to fetch nerby search results
-	 * @author arun
-	 *
-	 */
 	private class NearbySearchTask extends AsyncTask<String, Void, List<SearchResult>> {
 
 		@Override

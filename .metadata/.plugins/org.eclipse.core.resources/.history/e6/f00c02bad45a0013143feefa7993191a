@@ -1,8 +1,0 @@
-package DataBinders;
-
-import java.awt.List;
-
-public class GeoCodeResult {
-	private List<AddressComponent>
-
-}

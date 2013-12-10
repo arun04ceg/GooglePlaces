@@ -9,6 +9,11 @@ import DataBinders.QueryAutocompleteResultSet;
 import Http.Http;
 import JSONParsers.ParseQueryAutoComplete;
 
+/**
+ * Requester class for QueryAutoComplete
+ * @author arun
+ *
+ */
 public class QueryAutoComplete {
 
 	public static QueryAutocompleteResultSet autoComplete(HashMap<String, String> params) throws Exception {

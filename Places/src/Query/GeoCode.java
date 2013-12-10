@@ -9,6 +9,11 @@ import DataBinders.GeoCodeResultSet;
 import Http.Http;
 import JSONParsers.ParseGeoCode;
 
+/**
+ * Requester class for GeoCode
+ * @author arun
+ *
+ */
 public class GeoCode {
 	
 	public static GeoCodeResultSet getLatLong(HashMap<String, String> params) throws Exception {

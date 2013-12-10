@@ -9,6 +9,11 @@ import DataBinders.PlaceAutoCompleteResultSet;
 import Http.Http;
 import JSONParsers.ParsePlaceAutoComplete;
 
+/**
+ * Requester class for PlaceAutoComplte
+ * @author arun
+ *
+ */
 public class PlaceAutoComplete {
 
 	public static PlaceAutoCompleteResultSet autoComplete(HashMap<String, String> params) throws Exception {

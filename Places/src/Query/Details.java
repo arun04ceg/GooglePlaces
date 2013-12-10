@@ -9,6 +9,11 @@ import DataBinders.DetailsResultSet;
 import Http.Http;
 import JSONParsers.ParseDetails;
 
+/**
+ * Requester class for Details Result set
+ * @author arun
+ *
+ */
 public class Details {
 
 	public static DetailsResultSet details(HashMap<String, String> params) throws Exception {

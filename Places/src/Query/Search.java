@@ -9,6 +9,11 @@ import DataBinders.SearchResultSet;
 import Http.Http;
 import JSONParsers.ParseSearch;
 
+/**
+ * Requester class for search
+ * @author arun
+ *
+ */
 public class Search {
 
 	public static SearchResultSet search(String SearchType, HashMap<String, String> params) throws Exception {

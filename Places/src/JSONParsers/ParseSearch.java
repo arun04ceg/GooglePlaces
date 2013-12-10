@@ -8,6 +8,11 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/**
+ * Parser for search response
+ * @author arun
+ *
+ */
 public class ParseSearch {
 
 	public static SearchResultSet parse(String data) throws JsonParseException, JsonMappingException, IOException {

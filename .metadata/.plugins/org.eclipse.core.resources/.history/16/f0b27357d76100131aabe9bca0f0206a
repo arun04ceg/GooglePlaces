@@ -91,9 +91,6 @@ public class TextSearch extends Activity {
 			}
 		});
 		
-		/**
-		 * TextChangedListener
-		 */
 		textView.addTextChangedListener(new TextWatcher() {
 			
 			@Override
@@ -114,11 +111,6 @@ public class TextSearch extends Activity {
 	
 	}
 	
-	/**
-	 * AsyncTask to fetch TestSearch results 
-	 * @author arun
-	 *
-	 */
 	private class TextAutoTask extends AsyncTask<String, Void, List<String>> {
 
 		@Override
